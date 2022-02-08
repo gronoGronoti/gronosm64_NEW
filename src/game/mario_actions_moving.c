@@ -509,7 +509,7 @@ s32 begin_braking_action(struct MarioState *m) {
         return set_mario_action(m, ACT_BRAKING, 0);
     }
 
-    return set_mario_action(m, ACT_DECELERATING, 0);
+    return set_mario_action(m, ACT_IDLE, 0);
 }
 
 void anim_and_audio_for_walk(struct MarioState *m) {
