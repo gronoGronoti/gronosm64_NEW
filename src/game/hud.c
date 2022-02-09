@@ -298,18 +298,16 @@ void render_hud_power_meter(void) {
  * Renders breath meter health segment texture using a table list.
  */
 void render_breath_meter_segment(s16 numBreathWedges) {
-    u8 *(*healthLUT)[];
-
-
-    healthLUT = segmented_to_virtual(&breath_meter_segments_lut);
+    u8 *(*breathLUT)[];
+    breathLUT = segmented_to_virtual(&breath_meter_segments_lut);
 
     gDPPipeSync(gDisplayListHead++);
-	gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, (*healthLUT)[(8-numBreathWedges)*2]);
+	gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, (*breathLUT)[(8-numBreathWedges)*2]);
 	gSPDisplayList(gDisplayListHead++, RCP_breathmeter_txt);
     gSP1Triangle(gDisplayListHead++, 0, 1, 2, 0);
     gSP1Triangle(gDisplayListHead++, 0, 2, 3, 0);
 	
-    gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, (*healthLUT)[(((8-numBreathWedges)*2)+1)]);
+    gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, (*breathLUT)[(((8-numBreathWedges)*2)+1)]);
 	gSPDisplayList(gDisplayListHead++, RCP_breathmeter_txt);
     gSP1Triangle(gDisplayListHead++, 4, 5, 6, 0);
     gSP1Triangle(gDisplayListHead++, 4, 6, 7, 0);
@@ -328,11 +326,11 @@ void render_dl_breath_meter(s16 numBreathWedges) {
         return;
     }
 
-    guTranslate(mtx,(f32) sPowerMeterHUD.x,(f32) sPowerMeterHUD.y,0);
+    guTranslate(mtx,(f32) sBreathMeterHUD.x,(f32) sBreathMeterHUD.y,0);
 	gSPMatrix(gDisplayListHead++,VIRTUAL_TO_PHYSICAL(mtx++), G_MTX_MODELVIEW|G_MTX_MUL|G_MTX_PUSH);
 
         gSPDisplayList(gDisplayListHead++, RCP_breathmeter_on);	
-        render_power_meter_health_segment(numBreathWedges);
+        render_breath_meter_segment(numBreathWedges);
         gSPDisplayList(gDisplayListHead++, RCP_breathmeter_off);	
 
     gSPPopMatrix(gDisplayListHead++,G_MTX_MODELVIEW);

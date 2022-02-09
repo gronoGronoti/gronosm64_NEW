@@ -90,7 +90,7 @@ ALIGNED8 static const u8 breath_meter_right_side[] = {
 };
 
 // 0x030293E0
-const u8 *const breath_meter_health_segments_lut[] = {
+const u8 *const breath_meter_segments_lut[] = {
     breath_meter_left_side_eight_health,
     breath_meter_right_side_eight_health,
     breath_meter_left_side_seven_health,
