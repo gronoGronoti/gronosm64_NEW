@@ -12,4 +12,4 @@
  * be interrupted with text
  * Uncomment this to fix this bug, and frustrate speedrunners
  */
-// #define BUGFIX_DIALOG_TIME_STOP
+#define BUGFIX_DIALOG_TIME_STOP

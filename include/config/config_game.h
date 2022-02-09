@@ -12,7 +12,7 @@
 // #define ENABLE_VANILLA_LEVEL_SPECIFIC_CHECKS
 
 // Disable lives and hide the lives counter
-#define DISABLE_LIVES
+//#define DISABLE_LIVES
 
 // Save number of lives to the save file (Does nothing if DISABLE_LIVES is enabled)
 #define SAVE_NUM_LIVES
@@ -60,7 +60,7 @@
 // J, Q, V, X, Z, ¨, !, !!, ?, &, %, ., and the beta key.
 // [MAKE SURE TO ALSO BUILD FROM JP/SH AND EU TO OBTAIN THE ASSETS]
 // If this is disabled, backup assets will be used.
-// #define COMPLETE_EN_US_SEGMENT2
+#define COMPLETE_EN_US_SEGMENT2
 
 /// Removes multi-language cake screen
 #define EU_CUSTOM_CAKE_FIX

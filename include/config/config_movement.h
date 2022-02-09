@@ -79,7 +79,7 @@
 // #define LEDGE_GRABS_CHECK_SLOPE_ANGLE
 
 // Disable BLJs and crush SimpleFlips's dreams
-//#define DISABLE_BLJ
+#define DISABLE_BLJ
 
 // Re-enable upwarping when entering water. Forces you to only enter water from the top
 // #define WATER_PLUNGE_UPWARP
