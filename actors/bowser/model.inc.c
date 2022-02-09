@@ -37,7 +37,7 @@ ALIGNED8 static const Texture bowser_seg6_texture_06023C38[] = {
 
 // 0x06024438
 ALIGNED8 static const Texture bowser_seg6_texture_06024438[] = {
-#include "actors/bowser/bowser_tongue.rgba16.inc.c"
+#include "actors/bowser/bowser_mouth_unused.rgba16.inc.c"
 };
 
 // 0x06025438
@@ -48,18 +48,6 @@ ALIGNED8 static const Texture bowser_seg6_texture_06025438[] = {
 // 0x06025C38
 ALIGNED8 static const Texture bowser_seg6_texture_06025C38[] = {
 #include "actors/bowser/bowser_shell_edge.rgba16.inc.c"
-};
-
-// unreferenced, seen in pre-Spaceworld 1995 B-roll footage build
-// 0x06026438
-UNUSED ALIGNED8 static const Texture bowser_seg6_texture_06026438[] = {
-#include "actors/bowser/bowser_blue_eye_unused.rgba16.inc.c"
-};
-
-// unreferenced (stubbed texture? possibly original texture for mouth)
-// 0x06027438
-UNUSED ALIGNED8 static const Texture bowser_seg6_texture_06027438[] = {
-#include "actors/bowser/bowser_mouth_unused.rgba16.inc.c"
 };
 
 // 0x06028438
@@ -89,62 +77,67 @@ ALIGNED8 static const Texture bowser_seg6_texture_0602BC38[] = {
 
 // 0x0602CC38
 ALIGNED8 static const Texture bowser_seg6_texture_0602CC38[] = {
-#include "actors/bowser/bowser_eye_left_0.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_1_txt.rgba16.inc.c"
 };
 
 // 0x0602DC38
 ALIGNED8 static const Texture bowser_seg6_texture_0602DC38[] = {
-#include "actors/bowser/bowser_eye_half_closed_0.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_2_txt.rgba16.inc.c"
 };
 
 // 0x0602EC38
 ALIGNED8 static const Texture bowser_seg6_texture_0602EC38[] = {
-#include "actors/bowser/bowser_eye_closed_0.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_3_txt.rgba16.inc.c"
 };
 
 // 0x0602FC38
 ALIGNED8 static const Texture bowser_seg6_texture_0602FC38[] = {
-#include "actors/bowser/bowser_eye_center_0.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_C_txt.rgba16.inc.c"
 };
 
 // 0x06030C38
 ALIGNED8 static const Texture bowser_seg6_texture_06030C38[] = {
-#include "actors/bowser/bowser_eye_right_0.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_R_txt.rgba16.inc.c"
 };
 
 // 0x06031C38
 ALIGNED8 static const Texture bowser_seg6_texture_06031C38[] = {
-#include "actors/bowser/bowser_eye_far_left_0.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_1_txt.rgba16.inc.c"
 };
 
 // 0x06032C38
 ALIGNED8 static const Texture bowser_seg6_texture_06032C38[] = {
-#include "actors/bowser/bowser_eye_left_1.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_1_txt.rgba16.inc.c"
 };
 
 // 0x06033C38
 ALIGNED8 static const Texture bowser_seg6_texture_06033C38[] = {
-#include "actors/bowser/bowser_eye_half_closed_1.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_2_txt.rgba16.inc.c"
 };
 
 // 0x06034C38
 ALIGNED8 static const Texture bowser_seg6_texture_06034C38[] = {
-#include "actors/bowser/bowser_eye_closed_1.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_3_txt.rgba16.inc.c"
 };
 
 // 0x06035C38
 ALIGNED8 static const Texture bowser_seg6_texture_06035C38[] = {
-#include "actors/bowser/bowser_eye_center_1.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_C_txt.rgba16.inc.c"
 };
 
 // 0x06036C38
 ALIGNED8 static const Texture bowser_seg6_texture_06036C38[] = {
-#include "actors/bowser/bowser_eye_right_1.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_R_txt.rgba16.inc.c"
 };
 
 // 0x06037C38
 ALIGNED8 static const Texture bowser_seg6_texture_06037C38[] = {
-#include "actors/bowser/bowser_eye_far_left_1.rgba16.inc.c"
+#include "actors/bowser/bowser_eye_1_txt.rgba16.inc.c"
+};
+
+// 0x06024438
+ALIGNED8 static const Texture bowser_seg6_texture_42069[] = {
+#include "actors/bowser/bowser_yellow_horn.rgba16.inc.c"
 };
 
 // 0x06038C38
@@ -1184,6 +1177,7 @@ const Gfx bowser_seg6_dl_0603B8D0[] = {
     gsSPEndDisplayList(),
 };
 
+#if BUGFIX_BOWSER_FADING_OUT
 // 0x0603B948 - 0x0603B9C8
 const Gfx bowser_seg6_dl_0603B948[] = {
     gsDPPipeSync(),
@@ -1203,6 +1197,7 @@ const Gfx bowser_seg6_dl_0603B948[] = {
     gsSPSetGeometryMode(G_LIGHTING),
     gsSPEndDisplayList(),
 };
+#endif
 
 // 0x0603B948
 static const Vtx bowser_seg6_vertex_0603B948[] = {
@@ -2776,7 +2771,7 @@ const Gfx bowser_seg6_dl_0603FEA8[] = {
 
 // 0x0603FFA8 - 0x06040180
 const Gfx bowser_seg6_dl_0603FFA8[] = {
-    gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, bowser_seg6_texture_0602AC38),
+    gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, bowser_seg6_texture_42069),
     gsDPLoadSync(),
     gsDPLoadBlock(G_TX_LOADTILE, 0, 0, 32 * 64 - 1, CALC_DXT(32, G_IM_SIZ_16b_BYTES)),
     gsSPVertex(bowser_seg6_vertex_0603F1F8, 15, 0),
@@ -2868,6 +2863,7 @@ const Gfx bowser_seg6_dl_06040210[] = {
     gsSPEndDisplayList(),
 };
 
+#if BUGFIX_BOWSER_FADING_OUT
 // 0x06040358 - 0x06040428
 const Gfx bowser_seg6_dl_06040358[] = {
     gsDPPipeSync(),
@@ -2897,6 +2893,7 @@ const Gfx bowser_seg6_dl_06040358[] = {
     gsSPDisplayList(bowser_seg6_dl_060401F0),
     gsSPEndDisplayList(),
 };
+#endif
 
 // 0x060402D8
 static const Vtx bowser_seg6_vertex_060402D8[] = {
@@ -3507,7 +3504,7 @@ const Gfx bowser_seg6_dl_06041EA8[] = {
 
 // 0x06041F50 - 0x06042098
 const Gfx bowser_seg6_dl_06041F50[] = {
-    gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, bowser_seg6_texture_0602AC38),
+    gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, bowser_seg6_texture_42069),
     gsDPLoadSync(),
     gsDPLoadBlock(G_TX_LOADTILE, 0, 0, 32 * 64 - 1, CALC_DXT(32, G_IM_SIZ_16b_BYTES)),
     gsSPVertex(bowser_seg6_vertex_06041218, 15, 0),
@@ -3527,8 +3524,14 @@ const Gfx bowser_seg6_dl_06041F50[] = {
     gsSP1Triangle(12, 14, 13, 0x0),
     gsSPVertex(bowser_seg6_vertex_060414D8, 16, 0),
     gsSP2Triangles( 0,  1,  2, 0x0,  2,  1,  3, 0x0),
+    gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, bowser_seg6_texture_0602AC38),
+    gsDPLoadSync(),
+    gsDPLoadBlock(G_TX_LOADTILE, 0, 0, 32 * 64 - 1, CALC_DXT(32, G_IM_SIZ_16b_BYTES)),
     gsSP2Triangles( 4,  5,  6, 0x0,  7,  8,  9, 0x0),
     gsSP2Triangles(10, 11, 12, 0x0, 13, 14, 15, 0x0),
+    gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, bowser_seg6_texture_0602AC38),
+    gsDPLoadSync(),
+    gsDPLoadBlock(G_TX_LOADTILE, 0, 0, 32 * 64 - 1, CALC_DXT(32, G_IM_SIZ_16b_BYTES)),
     gsSPVertex(bowser_seg6_vertex_060415D8, 12, 0),
     gsSP2Triangles( 0,  1,  2, 0x0,  3,  4,  5, 0x0),
     gsSP2Triangles( 6,  7,  8, 0x0,  9, 10, 11, 0x0),
