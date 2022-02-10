@@ -26,7 +26,7 @@
  * cannon reticle, and the unused keys.
  **/
 
-#define HUD_POWER_METER_X            GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(58)
+#define HUD_POWER_METER_X            140
 #define HUD_POWER_METER_EMPHASIZED_Y 166
 #define HUD_POWER_METER_Y            200
 #define HUD_POWER_METER_HIDDEN_Y     300
@@ -37,9 +37,9 @@
 // #define HUD_BREATH_METER_Y        200
 // #define HUD_BREATH_METER_HIDDEN_Y 300
 // #else
-#define HUD_BREATH_METER_X         198
-#define HUD_BREATH_METER_Y         200
-#define HUD_BREATH_METER_HIDDEN_Y  300
+#define HUD_BREATH_METER_X         GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38)
+#define HUD_BREATH_METER_Y         34
+#define HUD_BREATH_METER_HIDDEN_Y  -50
 // #endif
 #endif
 
@@ -423,9 +423,9 @@ void render_debug_mode(void) {
  * Renders the amount of coins collected.
  */
 void render_hud_coins(void) {
-    print_text(140-30, (HUD_TOP_Y), "$"); // 'Coin' glyph
-    print_text(140-15, (HUD_TOP_Y), "*"); // 'X' glyph
-    print_text_fmt_int(140, (HUD_TOP_Y), "%02d", gHudDisplay.coins);
+    print_text(168, (HUD_TOP_Y-17), "$"); // 'Coin' glyph
+    print_text(184, (HUD_TOP_Y-17), "*"); // 'X' glyph
+    print_text_fmt_int(198, (HUD_TOP_Y-17), "%02d", gHudDisplay.coins);
 }
 void render_hud_specialcoins() {
     for (int i = 0; i < gHudDisplay.coins; i++) {
@@ -445,9 +445,9 @@ void render_hud_stars(void) {
         return;
     }
 
-    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), (HUD_TOP_Y-17), "^"); // 'Star' glyph
-    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38), (HUD_TOP_Y-17), "*"); // 'X' glyph
-    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), (HUD_TOP_Y-17), "%02d", gHudDisplay.stars);
+    print_text(168, (HUD_TOP_Y), "^"); // 'Star' glyph
+    print_text(184, (HUD_TOP_Y), "*"); // 'X' glyph
+    print_text_fmt_int(198, (HUD_TOP_Y), "%02d", gHudDisplay.stars);
 }
 
 /**
@@ -580,7 +580,7 @@ void render_hud(void) {
             render_hud_mario_lives();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_COIN_COUNT && (gCurrLevelNum != LEVEL_CASTLE_GROUNDS) && (gCurrLevelNum != LEVEL_CASTLE)) {
+        if (hudDisplayFlags) {
             render_hud_coins();
             render_hud_specialcoins();
         }
