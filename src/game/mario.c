@@ -1456,6 +1456,9 @@ void update_mario_health(struct MarioState *m) {
         if (m->health > 0x880) m->health = 0x880;
         if (m->health < 0x100) m->health = 0xFF;
 
+        //beta health regen
+        if (m->health < 0x880 && !(m->action & ACT_FLAG_SWIMMING)) m->health += 1;
+
 #ifndef BREATH_METER
         // Play a noise to alert the player when Mario is close to drowning.
         if (((m->action & ACT_GROUP_MASK) == ACT_GROUP_SUBMERGED) && (m->health < 0x300)) {
