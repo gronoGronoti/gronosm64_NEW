@@ -28,7 +28,7 @@
 
 #define HUD_POWER_METER_X            140
 #define HUD_POWER_METER_EMPHASIZED_Y 166
-#define HUD_POWER_METER_Y            200
+#define HUD_POWER_METER_Y            195
 #define HUD_POWER_METER_HIDDEN_Y     300
 
 #ifdef BREATH_METER
@@ -37,7 +37,7 @@
 // #define HUD_BREATH_METER_Y        200
 // #define HUD_BREATH_METER_HIDDEN_Y 300
 // #else
-#define HUD_BREATH_METER_X         GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38)
+#define HUD_BREATH_METER_X         GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54)
 #define HUD_BREATH_METER_Y         34
 #define HUD_BREATH_METER_HIDDEN_Y  -50
 // #endif
@@ -582,7 +582,7 @@ void render_hud(void) {
 
         if (hudDisplayFlags) {
             render_hud_coins();
-            render_hud_specialcoins();
+            //render_hud_specialcoins();
         }
 
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_STAR_COUNT) {
