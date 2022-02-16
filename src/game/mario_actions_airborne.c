@@ -111,7 +111,7 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
 
 s32 check_kick_or_dive_in_air(struct MarioState *m) {
     if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, m->forwardVel > 28.0f ? ACT_DIVE : ACT_JUMP_KICK, 0);
+        return set_mario_action(m, ACT_DIVE, 0);
     }
     return FALSE;
 }
@@ -928,26 +928,15 @@ s32 act_ground_pound(struct MarioState *m) {
     play_sound_if_no_flag(m, SOUND_ACTION_THROW, MARIO_ACTION_SOUND_PLAYED);
 
     if (m->actionState == 0) {
-        if (m->actionTimer < 10) {
-            yOffset = 20 - 2 * m->actionTimer;
-            if (m->pos[1] + yOffset + 160.0f < m->ceilHeight) {
-                m->pos[1] += yOffset;
-                m->peakHeight = m->pos[1];
-                vec3f_copy(m->marioObj->header.gfx.pos, m->pos);
-            }
-        }
 
         m->vel[1] = -50.0f;
         mario_set_forward_vel(m, 0.0f);
 
-        set_mario_animation(m, m->actionArg == ACT_ARG_GROUND_POUND_NORMAL ? MARIO_ANIM_START_GROUND_POUND
+        set_mario_animation(m,ACT_ARG_GROUND_POUND_NORMAL ? MARIO_ANIM_START_GROUND_POUND
                                                                            : MARIO_ANIM_TRIPLE_JUMP_GROUND_POUND);
-        if (m->actionTimer == 0) {
-            play_sound(SOUND_ACTION_SPIN, m->marioObj->header.gfx.cameraToObject);
-        }
 
         m->actionTimer++;
-        if (m->actionTimer >= m->marioObj->header.gfx.animInfo.curAnim->loopEnd + 4) {
+        if (m->actionTimer <= m->marioObj->header.gfx.animInfo.curAnim->loopEnd + 4) {
             play_sound(SOUND_MARIO_GROUND_POUND_WAH, m->marioObj->header.gfx.cameraToObject);
             m->actionState = ACT_STATE_GROUND_POUND_FALL;
         }
@@ -970,7 +959,6 @@ s32 act_ground_pound(struct MarioState *m) {
                     set_mario_action(m, ACT_GROUND_POUND_LAND, 0);
                 }
             }
-            set_camera_shake_from_hit(SHAKE_GROUND_POUND);
         }
 #ifndef DISABLE_GROUNDPOUND_BONK
         else if (stepResult == AIR_STEP_HIT_WALL) {
