@@ -1443,23 +1443,6 @@ s32 act_crouch_slide(struct MarioState *m) {
         return set_mario_action(m, ACT_BUTT_SLIDE, 0);
     }
 
-    if (m->actionTimer < 30) {
-        m->actionTimer++;
-        if (m->input & INPUT_A_PRESSED) {
-            if (m->forwardVel > 10.0f) {
-                return set_jumping_action(m, ACT_LONG_JUMP, 0);
-            }
-        }
-    }
-
-    if (m->input & INPUT_B_PRESSED) {
-        if (m->forwardVel >= 10.0f) {
-            return set_mario_action(m, ACT_SLIDE_KICK, 0);
-        } else {
-            return set_mario_action(m, ACT_MOVE_PUNCHING, 0x9);
-        }
-    }
-
     if (m->input & INPUT_A_PRESSED) {
         return set_jumping_action(m, ACT_JUMP, 0);
     }
@@ -1478,11 +1461,6 @@ s32 act_slide_kick_slide(struct MarioState *m) {
         queue_rumble_data(5, 80);
 #endif
         return set_jumping_action(m, ACT_FORWARD_ROLLOUT, 0);
-    }
-
-    set_mario_animation(m, MARIO_ANIM_SLIDE_KICK);
-    if (is_anim_at_end(m) && m->forwardVel < 1.0f) {
-        return set_mario_action(m, ACT_SLIDE_KICK_SLIDE_STOP, 0);
     }
 
     update_sliding(m, 1.0f);
@@ -1864,7 +1842,7 @@ s32 act_triple_jump_land(struct MarioState *m) {
         play_sound_if_no_flag(m, SOUND_MARIO_HAHA, MARIO_MARIO_SOUND_PLAYED);
     }
 
-    common_landing_action(m, MARIO_ANIM_TRIPLE_JUMP_LAND, ACT_FREEFALL);
+    common_landing_action(m, MARIO_ANIM_TWIRL_LAND, ACT_FREEFALL);
     return FALSE;
 }
 

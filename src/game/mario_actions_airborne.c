@@ -490,16 +490,8 @@ s32 act_triple_jump(struct MarioState *m) {
     if (gSpecialTripleJump) {
         return set_mario_action(m, ACT_SPECIAL_TRIPLE_JUMP, 0);
     }
-
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_DIVE, 0);
-    }
-
-    if (m->input & INPUT_Z_PRESSED) {
-        return set_mario_action(m, ACT_GROUND_POUND, 0);
-    }
-
-    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
+    set_mario_action(m, ACT_TWIRLING, 0);
+    play_mario_sound(m, SOUND_MARIO_YAHOO, 0);
 
     common_air_action_step(m, ACT_TRIPLE_JUMP_LAND, MARIO_ANIM_TRIPLE_JUMP, 0);
 #if ENABLE_RUMBLE
@@ -923,7 +915,6 @@ s32 act_steep_jump(struct MarioState *m) {
 
 s32 act_ground_pound(struct MarioState *m) {
     u32 stepResult;
-    f32 yOffset;
 
     play_sound_if_no_flag(m, SOUND_ACTION_THROW, MARIO_ACTION_SOUND_PLAYED);
 

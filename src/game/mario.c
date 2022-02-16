@@ -747,12 +747,6 @@ u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actionArg) {
             m->forwardVel *= 0.8f;
             break;
 
-        case ACT_BACKFLIP:
-            m->marioObj->header.gfx.animInfo.animID = -1;
-            m->forwardVel = -16.0f;
-            set_mario_y_vel_based_on_fspeed(m, 62.0f, 0.0f);
-            break;
-
         case ACT_TRIPLE_JUMP:
             set_mario_y_vel_based_on_fspeed(m, 69.0f, 0.0f);
             m->forwardVel *= 0.8f;
@@ -795,7 +789,7 @@ u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actionArg) {
             break;
 
         case ACT_SIDE_FLIP:
-            set_mario_y_vel_based_on_fspeed(m, 62.0f, 0.0f);
+            set_mario_y_vel_based_on_fspeed(m, 42.0f, 0.0f);
             m->forwardVel = 8.0f;
             m->faceAngle[1] = m->intendedYaw;
             break;
@@ -807,7 +801,7 @@ u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actionArg) {
             break;
 
         case ACT_LAVA_BOOST:
-            m->vel[1] = 84.0f;
+            m->vel[1] = 87.0f;
             if (actionArg == 0) {
                 m->forwardVel = 0.0f;
             }

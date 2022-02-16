@@ -67,41 +67,6 @@ s32 mario_update_punch_sequence(struct MarioState *m) {
             }
 
             if (m->input & INPUT_B_PRESSED) {
-                m->actionArg = ACT_ARG_PUNCH_SEQUENCE_WAH;
-            }
-
-            if (is_anim_at_end(m)) {
-                set_mario_action(m, endAction, 0);
-            }
-            break;
-
-        case ACT_ARG_PUNCH_SEQUENCE_WAH:
-            play_sound(SOUND_MARIO_PUNCH_WAH, m->marioObj->header.gfx.cameraToObject);
-            // fallthrough
-        case ACT_ARG_PUNCH_SEQUENCE_SECOND_PUNCH:
-            set_mario_animation(m, MARIO_ANIM_SECOND_PUNCH);
-            if (is_anim_past_end(m)) {
-                m->actionArg = ACT_ARG_PUNCH_SEQUENCE_SECOND_PUNCH_FAST;
-            } else {
-                m->actionArg = ACT_ARG_PUNCH_SEQUENCE_SECOND_PUNCH;
-            }
-
-            if (m->marioObj->header.gfx.animInfo.animFrame > 0) {
-                m->flags |= MARIO_PUNCHING;
-            }
-
-            if (m->actionArg == ACT_ARG_PUNCH_SEQUENCE_SECOND_PUNCH_FAST) {
-                m->marioBodyState->punchState = (PUNCH_STATE_TYPE_SECOND_PUNCH | 0x4);
-            }
-            break;
-
-        case ACT_ARG_PUNCH_SEQUENCE_SECOND_PUNCH_FAST:
-            set_mario_animation(m, MARIO_ANIM_SECOND_PUNCH_FAST);
-            if (m->marioObj->header.gfx.animInfo.animFrame <= 0) {
-                m->flags |= MARIO_PUNCHING;
-            }
-
-            if (m->input & INPUT_B_PRESSED) {
                 m->actionArg = ACT_ARG_PUNCH_SEQUENCE_GROUND_KICK;
             }
 
@@ -125,20 +90,6 @@ s32 mario_update_punch_sequence(struct MarioState *m) {
                 set_mario_action(m, endAction, 0);
             }
             break;
-
-        case ACT_ARG_PUNCH_SEQUENCE_BREAKDANCE:
-            play_mario_action_sound(m, SOUND_MARIO_PUNCH_HOO, 1);
-            set_mario_animation(m, MARIO_ANIM_BREAKDANCE);
-            animFrame = m->marioObj->header.gfx.animInfo.animFrame;
-
-            if (animFrame >= 2 && animFrame < 8) {
-                m->flags |= MARIO_TRIPPING;
-            }
-
-            if (is_anim_at_end(m)) {
-                set_mario_action(m, crouchEndAction, 0);
-            }
-            break;
     }
 
     return FALSE;
@@ -151,10 +102,6 @@ s32 act_punching(struct MarioState *m) {
 
     if (m->input & (INPUT_NONZERO_ANALOG | INPUT_A_PRESSED | INPUT_OFF_FLOOR | INPUT_ABOVE_SLIDE)) {
         return check_common_action_exits(m);
-    }
-
-    if (m->actionState == ACT_STATE_PUNCHING_CAN_JUMP_KICK && (m->input & INPUT_A_DOWN)) {
-        return set_mario_action(m, ACT_JUMP_KICK, 0);
     }
 
     m->actionState = ACT_STATE_PUNCHING_NO_JUMP_KICK;

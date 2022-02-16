@@ -506,10 +506,6 @@ s32 act_crouching(struct MarioState *m) {
         return set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
     }
 
-    if (m->input & INPUT_A_PRESSED) {
-        return set_jumping_action(m, ACT_BACKFLIP, 0);
-    }
-
     if (m->input & INPUT_OFF_FLOOR) {
         return set_mario_action(m, ACT_FREEFALL, 0);
     }
@@ -524,14 +520,6 @@ s32 act_crouching(struct MarioState *m) {
 
     if (!(m->input & INPUT_Z_DOWN)) {
         return set_mario_action(m, ACT_STOP_CROUCHING, 0);
-    }
-
-    if (m->input & INPUT_NONZERO_ANALOG) {
-        return set_mario_action(m, ACT_START_CRAWLING, 0);
-    }
-
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_PUNCHING, 9);
     }
 
     stationary_ground_step(m);
