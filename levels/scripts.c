@@ -191,7 +191,7 @@ const LevelScript script_func_global_1[] = {
     LOAD_MODEL_FROM_DL( MODEL_DL_CANNON_LID,           cannon_lid_seg8_dl_080048E0,              LAYER_OPAQUE),
     LOAD_MODEL_FROM_GEO(MODEL_BOWLING_BALL,            bowling_ball_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CANNON_BARREL,           cannon_barrel_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_CANNON_BASE,             cannon_base_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CANNON_BASE,             /*cannon_base_geo*/cannon_geo),
     LOAD_MODEL_FROM_GEO(MODEL_HEART,                   heart_geo),
     LOAD_MODEL_FROM_GEO(MODEL_FLYGUY,                  flyguy_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHUCKYA,                 chuckya_geo),

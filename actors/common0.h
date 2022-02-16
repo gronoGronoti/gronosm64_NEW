@@ -54,10 +54,20 @@ extern const Gfx cannon_barrel_seg8_dl_080064C0[];
 extern const Gfx cannon_barrel_seg8_dl_08006660[];
 
 // cannon_base
-extern const GeoLayout cannon_base_geo[];
-extern const Gfx cannon_base_seg8_dl_08005658[];
-extern const Gfx cannon_base_seg8_dl_080056D0[];
-extern const Gfx cannon_base_seg8_dl_080057F8[];
+extern const GeoLayout cannon_geo[];
+extern Lights1 cannon_cannonlogo_f3d_lights;
+extern Lights1 cannon_cannonside_f3d_lights;
+extern u8 cannon_Material1_ci8[];
+extern u8 cannon_Material1_ci8_pal_rgba16[];
+extern Vtx cannon_cannon_mesh_layer_1_vtx_0[32];
+extern Gfx cannon_cannon_mesh_layer_1_tri_0[];
+extern Vtx cannon_cannon_mesh_layer_1_vtx_1[24];
+extern Gfx cannon_cannon_mesh_layer_1_tri_1[];
+extern Gfx mat_cannon_cannonlogo_f3d[];
+extern Gfx mat_revert_cannon_cannonlogo_f3d[];
+extern Gfx mat_cannon_cannonside_f3d[];
+extern Gfx cannon_cannon_mesh_layer_1[];
+extern Gfx cannon_material_revert_render_settings[];
 
 // cannon_lid
 extern const Gfx cannon_lid_seg8_dl_08004898[];
