@@ -468,10 +468,6 @@ void set_camera_shake_from_hit(s16 shake) {
             set_camera_roll_shake(0x60, 0x3, 0x8000);
             break;
 
-        case SHAKE_GROUND_POUND:
-            set_camera_pitch_shake(0x60, 0xC, 0x8000);
-            break;
-
         case SHAKE_SMALL_DAMAGE:
             if (sMarioCamState->action & (ACT_FLAG_SWIMMING | ACT_FLAG_METAL_WATER)) {
                 set_camera_yaw_shake(0x200, 0x10, 0x1000);

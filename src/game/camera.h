@@ -189,7 +189,6 @@ enum CameraStatus {
 enum CameraShake {
     SHAKE_NONE,
     SHAKE_ATTACK,
-    SHAKE_GROUND_POUND,
     SHAKE_SMALL_DAMAGE,
     SHAKE_MED_DAMAGE,
     SHAKE_LARGE_DAMAGE,
