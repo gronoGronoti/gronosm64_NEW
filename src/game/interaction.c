@@ -897,7 +897,7 @@ u32 interact_warp(struct MarioState *m, UNUSED u32 interactType, struct Object *
                 queue_rumble_data(12, 80);
             }
 #else
-            play_sound(obj->collisionData == segmented_to_virtual(warp_pipe_seg3_collision_03009AC8)
+            play_sound(obj->collisionData == segmented_to_virtual(/*warp_pipe_seg3_collision_03009AC8*/warp_pipe_collision)
                            ? SOUND_MENU_ENTER_PIPE
                            : SOUND_MENU_ENTER_HOLE,
                        m->marioObj->header.gfx.cameraToObject);

@@ -1,0 +1,17 @@
+extern const GeoLayout warp_pipe_geo[];
+extern Lights1 warp_pipe_side_f3d_lights;
+extern Lights1 warp_pipe_top_f3d_lights;
+extern u8 warp_pipe_side_ci8[];
+extern u8 warp_pipe_side_ci8_pal_rgba16[];
+extern u8 warp_pipe_top_ci8[];
+extern u8 warp_pipe_top_ci8_pal_rgba16[];
+extern Vtx warp_pipe_RCP_dokan_NEW_mesh_layer_1_vtx_0[54];
+extern Gfx warp_pipe_RCP_dokan_NEW_mesh_layer_1_tri_0[];
+extern Vtx warp_pipe_RCP_dokan_NEW_mesh_layer_1_vtx_1[27];
+extern Gfx warp_pipe_RCP_dokan_NEW_mesh_layer_1_tri_1[];
+extern Gfx mat_warp_pipe_side_f3d[];
+extern Gfx mat_revert_warp_pipe_side_f3d[];
+extern Gfx mat_warp_pipe_top_f3d[];
+extern Gfx mat_revert_warp_pipe_top_f3d[];
+extern Gfx warp_pipe_RCP_dokan_NEW_mesh_layer_1[];
+extern Gfx warp_pipe_material_revert_render_settings[];

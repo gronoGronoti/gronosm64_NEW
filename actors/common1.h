@@ -274,12 +274,23 @@ extern const Gfx tree_seg3_dl_palm_transparent[];
 
 // warp_pipe
 extern const GeoLayout warp_pipe_geo[];
-extern const Gfx warp_pipe_seg3_dl_03008E40[];
-extern const Gfx warp_pipe_seg3_dl_03008F98[];
-extern const Gfx warp_pipe_seg3_dl_03009968[];
-extern const Gfx warp_pipe_seg3_dl_03009A20[];
-extern const Gfx warp_pipe_seg3_dl_03009A50[];
-extern const Collision warp_pipe_seg3_collision_03009AC8[];
+extern Lights1 warp_pipe_side_f3d_lights;
+extern Lights1 warp_pipe_top_f3d_lights;
+extern u8 warp_pipe_side_ci8[];
+extern u8 warp_pipe_side_ci8_pal_rgba16[];
+extern u8 warp_pipe_top_ci8[];
+extern u8 warp_pipe_top_ci8_pal_rgba16[];
+extern Vtx warp_pipe_RCP_dokan_NEW_mesh_layer_1_vtx_0[54];
+extern Gfx warp_pipe_RCP_dokan_NEW_mesh_layer_1_tri_0[];
+extern Vtx warp_pipe_RCP_dokan_NEW_mesh_layer_1_vtx_1[27];
+extern Gfx warp_pipe_RCP_dokan_NEW_mesh_layer_1_tri_1[];
+extern Gfx mat_warp_pipe_side_f3d[];
+extern Gfx mat_revert_warp_pipe_side_f3d[];
+extern Gfx mat_warp_pipe_top_f3d[];
+extern Gfx mat_revert_warp_pipe_top_f3d[];
+extern Gfx warp_pipe_RCP_dokan_NEW_mesh_layer_1[];
+extern Gfx warp_pipe_material_revert_render_settings[];
+extern const Collision warp_pipe_collision[];
 
 // white_particle
 extern const GeoLayout white_particle_geo[];
