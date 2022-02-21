@@ -911,6 +911,8 @@ const BehaviorScript bhvSpawnedStar[] = {
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     SET_INT(oBehParams2ndByte, SPAWN_STAR_POS_CUTSCENE_BP_SPAWN_AT_HOME),
     GOTO(bhvSpawnedStarNoLevelExit + 1 + 1),
+    ANIMATE_TEXTURE(oAnimState, 2),
+    BILLBOARD(),
 };
 
 const BehaviorScript bhvSpawnedStarNoLevelExit[] = {
@@ -920,6 +922,8 @@ const BehaviorScript bhvSpawnedStarNoLevelExit[] = {
     SET_HOME(),
     CALL_NATIVE(bhv_spawned_star_init),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_spawned_star_loop),
     END_LOOP(),
 };
@@ -1402,6 +1406,8 @@ const BehaviorScript bhvUkikiCageStar[] = {
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     SET_HOME(),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_ukiki_cage_star_loop),
     END_LOOP(),
 };
@@ -1848,6 +1854,8 @@ const BehaviorScript bhvCcmTouchedStarSpawn[] = {
     SET_HITBOX(/*Radius*/ 500, /*Height*/ 500),
     SET_INT(oIntangibleTimer, 0),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_ccm_touched_star_spawn_loop),
     END_LOOP(),
 };
@@ -1937,6 +1945,8 @@ const BehaviorScript bhvGrandStar[] = {
     SET_HITBOX(/*Radius*/ 160, /*Height*/ 100),
     SET_HOME(),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_grand_star_loop),
     END_LOOP(),
 };
@@ -3135,6 +3145,7 @@ const BehaviorScript bhvUnusedFakeStar[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
         ADD_INT(oFaceAnglePitch, 0x100),
         ADD_INT(oFaceAngleYaw,   0x100),
     END_LOOP(),
@@ -3499,6 +3510,8 @@ const BehaviorScript bhvUnlockDoorStar[] = {
     OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     CALL_NATIVE(bhv_unlock_door_star_init),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_unlock_door_star_loop),
     END_LOOP(),
 };
@@ -3606,6 +3619,8 @@ const BehaviorScript bhvActSelectorStarType[] = {
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     SET_HOME(),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_act_selector_star_type_loop),
     END_LOOP(),
 };
@@ -4133,6 +4148,8 @@ const BehaviorScript bhvCelebrationStar[] = {
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     CALL_NATIVE(bhv_celebration_star_init),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_celebration_star_loop),
     END_LOOP(),
 };
@@ -4549,6 +4566,8 @@ const BehaviorScript bhvStar[] = {
     CALL_NATIVE(bhv_init_room),
     CALL_NATIVE(bhv_collect_star_init),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_collect_star_loop),
     END_LOOP(),
 };
@@ -4559,6 +4578,8 @@ const BehaviorScript bhvStarSpawnCoordinates[] = {
     CALL_NATIVE(bhv_collect_star_init),
     CALL_NATIVE(bhv_star_spawn_init),
     BEGIN_LOOP(),
+        BILLBOARD(),
+        ANIMATE_TEXTURE(oAnimState, 2),
         CALL_NATIVE(bhv_star_spawn_loop),
     END_LOOP(),
 };
@@ -4568,6 +4589,8 @@ const BehaviorScript bhvHiddenRedCoinStar[] = {
     OR_INT(oFlags, (OBJ_FLAG_PERSISTENT_RESPAWN | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     CALL_NATIVE(bhv_hidden_red_coin_star_init),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_hidden_red_coin_star_loop),
     END_LOOP(),
 };
@@ -4590,6 +4613,8 @@ const BehaviorScript bhvBowserCourseRedCoinStar[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, (OBJ_FLAG_PERSISTENT_RESPAWN | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_bowser_course_red_coin_star_loop),
     END_LOOP(),
 };
@@ -4599,6 +4624,8 @@ const BehaviorScript bhvHiddenStar[] = {
     OR_INT(oFlags, (OBJ_FLAG_PERSISTENT_RESPAWN | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     CALL_NATIVE(bhv_hidden_star_init),
     BEGIN_LOOP(),
+        ANIMATE_TEXTURE(oAnimState, 2),
+        BILLBOARD(),
         CALL_NATIVE(bhv_hidden_star_loop),
     END_LOOP(),
 };
