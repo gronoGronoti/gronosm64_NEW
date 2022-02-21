@@ -506,7 +506,7 @@ s32 begin_braking_action(struct MarioState *m) {
     }
 
     if (m->forwardVel >= 16.0f && m->floor->normal.y >= COS80) {
-        return set_mario_action(m, ACT_IDLE, 0);
+        return set_mario_action(m, ACT_BRAKING, 0);
     }
 
     return set_mario_action(m, ACT_IDLE, 0);
@@ -1037,7 +1037,7 @@ s32 act_braking(struct MarioState *m) {
         return check_common_action_exits(m);
     }
 
-    if (apply_slope_decel(m, 2.0f)) {
+    if (apply_slope_decel(m, 0.5f)) {  // old = 2.0f
         return set_mario_action(m, ACT_BRAKING_STOP, 0);
     }
 
