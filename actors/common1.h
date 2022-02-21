@@ -248,10 +248,28 @@ extern const Gfx sand_seg3_dl_particle[];
 
 // star
 extern const GeoLayout star_geo[];
-extern const Gfx star_seg3_sub_dl_body[];
+/*extern const Gfx star_seg3_sub_dl_body[];
 extern const Gfx star_seg3_dl_body[];
 extern const Gfx star_seg3_sub_dl_eyes[];
-extern const Gfx star_seg3_dl_eyes[];
+extern const Gfx star_seg3_dl_eyes[];*/
+extern Gfx  RCP_star1[];
+extern Gfx  RCP_star2[];
+extern Gfx  RCP_star3[];
+extern Gfx  RCP_star4[];
+extern Gfx  RCP_star5[];
+extern Gfx  RCP_star6[];
+extern Gfx  RCP_star7[];
+extern Gfx  RCP_star8[];
+extern const GeoLayout stardust_geo[];
+extern Gfx  RCP_star_dust1[];
+extern Gfx  RCP_star_dust2[];
+extern Gfx  RCP_star_dust3[];
+extern Gfx  RCP_star_dust4[];
+extern Gfx  RCP_star_dust5[];
+extern Gfx  RCP_star_dust6[];
+extern Gfx  RCP_star_dust7[];
+extern Gfx  RCP_star_dust8[];
+
 
 // transparent_star
 extern const GeoLayout transparent_star_geo[];
