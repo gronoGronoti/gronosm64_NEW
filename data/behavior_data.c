@@ -4148,7 +4148,6 @@ const BehaviorScript bhvCelebrationStar[] = {
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     CALL_NATIVE(bhv_celebration_star_init),
     BEGIN_LOOP(),
-        ANIMATE_TEXTURE(oAnimState, 2),
         BILLBOARD(),
         CALL_NATIVE(bhv_celebration_star_loop),
     END_LOOP(),
