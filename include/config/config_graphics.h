@@ -11,7 +11,7 @@
 #define INTRO_CREDIT
 
 // Spawn floombas in the title screen
-#define INTRO_FLOOMBAS
+// #define INTRO_FLOOMBAS
 
 // Enable widescreen (16:9) support
 #define WIDE
