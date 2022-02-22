@@ -55,12 +55,9 @@ Gfx *geo_intro_super_mario_64_logo(s32 callContext, struct GraphNode *node, UNUS
         dlIter = dl;
         Vec3f scale;
 
-        // determine scale based on the frame counter
-        if (sIntroFrameCounter >= 0 && sIntroFrameCounter < INTRO_STEPS_ZOOM_IN) {
-            // zooming in
-            vec3f_copy(scale, &scaleTable1[sIntroFrameCounter * 3]);
-        } else if (sIntroFrameCounter >= INTRO_STEPS_ZOOM_IN && sIntroFrameCounter < INTRO_STEPS_HOLD_1) {
+        if (sIntroFrameCounter >= 0 && sIntroFrameCounter < INTRO_STEPS_HOLD_1) {
             // holding
+            vec3f_copy(scale, &scaleTable1[sIntroFrameCounter * 3]);
             vec3_same(scale, 1.0f);
         } else if (sIntroFrameCounter >= INTRO_STEPS_HOLD_1 && sIntroFrameCounter < INTRO_STEPS_ZOOM_OUT) {
             // zooming out
