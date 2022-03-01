@@ -5284,7 +5284,7 @@ void set_fixed_cam_axis_sa_lobby(UNUSED s16 preset) {
             break;
 
         case AREA_CASTLE_LOBBY:
-            vec3f_set(sFixedModeBasePosition, 638.f, 180.f, 3039.f);
+            vec3f_set(sFixedModeBasePosition, 742.f, 171.f, 120.f);
             break;
     }
 }
