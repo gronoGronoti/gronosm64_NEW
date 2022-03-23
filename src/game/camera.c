@@ -3421,7 +3421,6 @@ void update_graph_node_camera(struct GraphNodeCamera *gc) {
     gc->rollScreen = gLakituState.roll;
     vec3f_copy(gc->pos, gLakituState.pos);
     vec3f_copy(gc->focus, gLakituState.focus);
-    zoom_out_if_paused_and_outside(gc);
 }
 
 Gfx *geo_camera_main(s32 callContext, struct GraphNode *g, void *context) {
@@ -5284,7 +5283,7 @@ void set_fixed_cam_axis_sa_lobby(UNUSED s16 preset) {
             break;
 
         case AREA_CASTLE_LOBBY:
-            vec3f_set(sFixedModeBasePosition, 742.f, 171.f, 120.f);
+            vec3f_set(sFixedModeBasePosition, -577.f, 143.f, 1443.f);
             break;
     }
 }
